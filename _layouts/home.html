@@ -3,67 +3,111 @@ layout: base
 ---
 
 <div class="home">
-    {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-    {%- endif -%}
+  {%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
 
-    {{ content }}
-
-
-    {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-    {% else %}
-    {% assign posts = site.posts %}
-    {% endif %}
-
-
-    {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-    <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul class="post-list">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {%- for post in posts -%}
-        <li>
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}
-                </a>
-            </h3>
-            {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-            {%- endif -%}
-        </li>
-        {%- endfor -%}
+  <div class="slider">
+    <ul id="slide-list">
+      <li class="slide-item slide-item-1"></li>
+      <li class="slide-item slide-item-2"></li>
+      <li class="slide-item slide-item-3"></li>
     </ul>
 
-    {% if site.paginate %}
-    <div class="pager">
-        <ul class="pagination">
-            {%- if paginator.previous_page %}
-            <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{
-                    paginator.previous_page }}</a></li>
-            {%- else %}
-            <li>
-                <div class="pager-edge">•</div>
-            </li>
-            {%- endif %}
-            <li>
-                <div class="current-page">{{ paginator.page }}</div>
-            </li>
-            {%- if paginator.next_page %}
-            <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a>
-            </li>
-            {%- else %}
-            <li>
-                <div class="pager-edge">•</div>
-            </li>
-            {%- endif %}
-        </ul>
+    <div class="slider-button-left">
+      <button onclick="previousSlide()">
+        <i class="fas fa-angle-left"></i>
+      </button>
     </div>
-    {%- endif %}
+    <div class="slider-button-right">
+      <button onclick="nextSlide()">
+        <i class="fas fa-angle-right"></i>
+      </button>
+    </div>
+  </div>
 
-    {%- endif -%}
+  <div class="quick-menu">
+    <ul class="quick-menu-list">
+      <li class="quick-menu-item live-stream">
+        <div class="quick-menu-item-inner">
+          <i class="fas fa-wifi"></i>
+          <div class="item-text">
+            <a href="">라이브방송</a>
+          </div>
+        </div>
+      </li>
+      <li class="quick-menu-item new-commer">
+        <div class="quick-menu-item-inner">
+          <i class="fas fa-heart"></i>
+          <div class="item-text">
+            <a href="">새가족등록</a>
+          </div>
+        </div>
+      </li>
+      <li class="quick-menu-item online-bulletin">
+        <div class="quick-menu-item-inner">
+          <i class="fas fa-desktop"></i>
+          <div class="item-text">
+            <a href="">온라인주보</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 
+  {{ content }} {% if site.paginate %} {% assign posts = paginator.posts %} {%
+  else %} {% assign posts = site.posts %} {% endif %} {%- if posts.size > 0 -%}
+  {%- if page.list_title -%}
+  <h2 class="post-list-heading">{{ page.list_title }}</h2>
+  {%- endif -%}
+  <ul class="post-list">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+    <li>
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  {% if site.paginate %}
+  <div class="pager">
+    <ul class="pagination">
+      {%- if paginator.previous_page %}
+      <li>
+        <a
+          href="{{ paginator.previous_page_path | relative_url }}"
+          class="previous-page"
+          >{{ paginator.previous_page }}</a
+        >
+      </li>
+      {%- else %}
+      <li>
+        <div class="pager-edge">•</div>
+      </li>
+      {%- endif %}
+      <li>
+        <div class="current-page">{{ paginator.page }}</div>
+      </li>
+      {%- if paginator.next_page %}
+      <li>
+        <a
+          href="{{ paginator.next_page_path | relative_url }}"
+          class="next-page"
+          >{{ paginator.next_page }}</a
+        >
+      </li>
+      {%- else %}
+      <li>
+        <div class="pager-edge">•</div>
+      </li>
+      {%- endif %}
+    </ul>
+  </div>
+  {%- endif %} {%- endif -%}
 </div>
