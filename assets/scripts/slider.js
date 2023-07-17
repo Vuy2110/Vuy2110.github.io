@@ -2,7 +2,9 @@ var slideIndex = 0;
 var slides = document.querySelectorAll("#slide-list li");
 
 function showSlide() {
-  if (!slides) return;
+  if (slides.length === 0) {
+    return;
+  }
   // 모든 슬라이드를 숨김
   for (var i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";

@@ -438,7 +438,7 @@ pre > code {
 /**
  * Wrapper
  */
-.wrapper {
+.post-wrapper {
   max-width: calc(800px - (30px));
   margin-right: auto;
   margin-left: auto;
@@ -447,7 +447,7 @@ pre > code {
 }
 
 @media screen and (min-width: 800px) {
-  .wrapper {
+  .post-wrapper {
     max-width: calc(800px - (30px * 2));
     padding-right: 30px;
     padding-left: 30px;
@@ -730,6 +730,7 @@ table td {
 .post-list {
   margin-left: 0;
   list-style: none;
+  cursor: pointer;
 }
 
 .post-list > li {
@@ -952,8 +953,9 @@ table td {
   padding: 12px;
 }
 
-.gnb-wrapper {
+#gnb-wrapper {
   display: flex;
+  justify-content: space-between;
 }
 
 .nav-items {
@@ -964,6 +966,7 @@ table td {
 .nav-item {
   margin: 0 16px;
   padding: 16px;
+  font-size: 1.1rem;
 }
 
 .gnb-nav {
@@ -982,6 +985,18 @@ table td {
   right: 20px;
   top: 10px;
   color: lightskyblue;
+}
+
+#gnb-wrapper.on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 60px;
+  border: none;
+  z-index: 20;
+  background-color: white;
 }
 
 /* header */
@@ -1097,17 +1112,21 @@ table td {
 
 /* quick-menu */
 .quick-menu-list {
-  height: 80px;
+  height: 125px;
   display: flex;
   justify-content: space-around;
 }
 
 .quick-menu-item {
   width: 100%;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+}
+
+.quick-menu-item-text {
+  margin-top: 40px;
 }
 
 .quick-menu-item-inner:hover {
@@ -1117,8 +1136,7 @@ table td {
 
 .quick-menu-item-inner {
   display: flex;
-  margin-top: 4px;
-  padding: 16px;
+  height: 100%;
 }
 
 .quick-menu-item:hover > .quick-menu-item-inner * {
@@ -1131,7 +1149,8 @@ table td {
 .fa-desktop {
   font-size: 40px;
   margin-right: 20px;
-  margin-left: 12px;
+  margin-left: 50px;
+  margin-top: 40px;
 }
 
 .live-stream {
@@ -1146,13 +1165,47 @@ table td {
   background-image: url(https://www.kcnla.org/data/image/20222202/3076973895__4a872b39a5340025362e3fa6f7f0e752dc31ff48.png);
 }
 
-@media only screen and (max-width: 835px) {
-  .gnb-wrapper {
-    display: none;
-  }
+/* sermon */
+#sub-banner {
+  background-image: url("https://www.kcnla.org/data/image/20211212/2887647742__277983814b75a068d6120a982802ddcabe16d804.png");
+  min-height: 450px;
+  background-size: cover;
+  background-position: center;
 }
 
-@media only screen and (max-width: 720px) {
+.sub-banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.sermon-text-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 1200px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+.sermon-title-en {
+  font-size: 1.8em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sermon-title-jp {
+  font-size: 3.8em;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 870px) {
+  #gnb-wrapper {
+    display: none;
+  }
   .mobile-menu-bar {
     display: block;
   }
@@ -1171,5 +1224,20 @@ table td {
 
   .quick-menu-item {
     background-position: right;
+    background-size: contain;
+  }
+
+  .quick-menu-item-text {
+    margin-top: 20px;
+  }
+
+  .fa-wifi,
+  .fa-heart,
+  .fa-desktop {
+    font-size: 40px;
+    margin-right: 20px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
