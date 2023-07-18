@@ -13,7 +13,6 @@ function showSlide() {
   // 현재 슬라이드를 보여줌
   slides[slideIndex].style.display = "block";
   slides[slideIndex].classList.add("fade-in");
-  console.log("현재슬라이드:", slideIndex);
 }
 
 function nextSlide() {
