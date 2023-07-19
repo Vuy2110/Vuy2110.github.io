@@ -1100,8 +1100,13 @@ table td {
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   min-width: 115px;
-  padding: 10px;
   cursor: pointer;
+}
+
+.sp-gnb-item > a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
 }
 
 .sp-gnb-item:hover {
@@ -1334,6 +1339,64 @@ table td {
 .sermon-title-jp {
   font-size: 3.8em;
   font-weight: 600;
+}
+
+/* about-page */
+
+.about-sub-banner-bg {
+  background-image: url(https://www.kcnla.org/data/image/20210812/2887647742__537725d20157e8adcd2f5545eab91efb95934347.png);
+  min-height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner-text-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 1200px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+.about-title-en {
+  font-size: 12pt;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about-title-jp {
+  font-size: 18pt;
+  font-weight: 600;
+}
+
+.about-title {
+  font-size: 1.4rem;
+  display: block;
+  padding: 0 10px;
+  border-bottom: 1px solid #dadada;
+  line-height: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.about-addon {
+  padding: 40px;
+  background-image: url(https://go2-j.com/wp-content/uploads/2022/05/2e9560b84352cb19.jpg);
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pastor-introduction {
+  background-image: url(https://i.ytimg.com/vi/n2A9zYvrpuY/maxresdefault.jpg);
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 @media only screen and (max-width: 870px) {

@@ -42,3 +42,6 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # jekyll-admin
 gem 'jekyll-admin', group: :jekyll_plugins
+
+# public_suffix
+gem "public_suffix", ">=4.0.7"
